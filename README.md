@@ -18,9 +18,13 @@ Given the number of datasets that the projects aims to integrate, the steps abov
 ### Datasets that are envisioned to be used in the project are
 
 i.  [STCN](www.stcnl.nl)
+
 ii. [GGC](https://www.oclc.org/nl/ggc.html)
+
 iii.[BP](www.biografischportaal.nl)
+
 iv. Repertorium Academicum Neerlandicum (not available in the public domain yet)
+
 
 Furthermore, it is envisioned that a link will be made with [Dutch Historical Dictionaries](https://ivdnt.org/woordenboeken/historische-woordenboeken/#historical-dictionaries)
 
