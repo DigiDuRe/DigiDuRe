@@ -33,7 +33,8 @@ In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.
 
 ### Database design
 
-The first step for the data harmonization is to generate a database design for the various datasets listed above in order to see where what can be connected.
+The first step for the data harmonization is to generate a graphic database model for the various datasets listed above in order to see where what can be connected.
+
 
 
 
