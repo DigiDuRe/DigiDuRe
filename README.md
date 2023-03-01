@@ -15,7 +15,28 @@ Roughly the project can be divided in five core activities.
 
 Given the number of datasets that the projects aims to integrate, the steps above will most likely not be taken in a linear way. Instead, the actvitities will go in an iterative manner. Meaning that we first are going to link two datasets and perform a series of analysis(going through steps 1-3), followed by integrating another one and so forth. The methods that will be applied for the various steps will overlap.
 
-### Description of the datasets
+### Datasets that are envisioned to be used in the project are
+
+i.  [STCN](www.stcnl.nl)
+ii. [GGC](https://www.oclc.org/nl/ggc.html)
+iii.[BP](www.biografischportaal.nl)
+iv. Repertorium Academicum Neerlandicum (not available in the public domain yet)
+
+Furthermore, it is envisioned that a link will be made with [Dutch Historical Dictionaries](https://ivdnt.org/woordenboeken/historische-woordenboeken/#historical-dictionaries)
+
+In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.nl/cms/projectportfolio/kerkenkaart-2/) and the [monastries](https://geoplaza.vu.nl/cms/projectportfolio/kloosterkaart/) database is likely to be made.
+
+
+### Database design
+
+The first step for the data harmonization is to generate a database design for the various datasets listed above in order to see where what can be connected.
+
+
+
+
+
+
+
 
 
 
