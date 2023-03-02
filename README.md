@@ -17,7 +17,7 @@ Given the number of datasets that the projects aims to integrate, the steps abov
 
 ### Datasets that are envisioned to be used in the project are
 
-i.  [STCN](http://data.bibliotheken.nl/doc/dataset/)
+i.  [STCN](http://data.bibliotheken.nl/doc/dataset/stcn)
 
 ii. [GGC](https://www.oclc.org/nl/ggc.html)
 
