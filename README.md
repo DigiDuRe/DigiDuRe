@@ -34,3 +34,5 @@ In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.
 ### Database schemas 
 
 The first step for the data harmonization is to generate a database schema for the various datasets listed above. This schema will allow us to see where what fields can be connected and based on what characteristics these datasets can be linked.
+
+temp
