@@ -99,9 +99,11 @@ NB: Step 8 has also been performed for the child table produced for ministers un
 
 Besides dataset 1, presented above, an integration with another dataset, Dutch Ministers 1572-2004 (predikantenbestand ca1572-ca2004.accdb) containing information about the careers, needs to be made as well. The dataset that needs to be integrated has been created by one of Van Lieburg´s student assistants in the past and is said to contain more up to date information where individuals acted as ministers. The dataset contains the careers of the various ministers and tells where they have acted as “predikant” (minister). The data has been stored as a separate table where every moment a new position as minister was taken have been stored in a separate row (figure 2). In case an individual had more positions as minister in its career this dataset contains multiple rows for that individual. For instance, Isaäc Abbema in the example had two posts one from 1618 to 1635 in Berkenwoude and from 1635 to 1637 in Gouda.  
 
-Figure 2 Dutch Ministers 1572-2004 
+ ![Figure 2 Dutch Ministers 1572-2004](/images/figure2.png)
 
 Contrary to Dataset 1, this dataset also contains data about ministers that started their careers after 1815. For the RAN van Lieburg wants to use this dataset as the starting point for the individual ministers. However, something that makes this dataset complicated to work with is that over time people had the same name. Out of the 53646 records this dataset contains, 25082 times exactly the same name is used. However, counting the number of times a name is used, where every count would be a step in its career, results in unfeasible career paths. J. de Jong would have had 30 positions. Looking closely at the dataset “J. de Jong” appears to be a name that, not surprisingly, represents multiple individuals. 
+
+![Figure 3](/images/figure3.png)
 
 To use this dataset as a starting point the individuals need to be distilled from it. 
 However, before doing that some errors in the dataset needs to be fixed. A quick scan of the dataset revealed a series of errors listed below. 
@@ -116,5 +118,7 @@ An initial round of corrections has been executed and produced an updated list. 
 -	how many semicolons there are in field “predikant” (and if not 1 put in the list to check)
 -	whether “predikant” starts with a space
 Once these are checked, the next step is to distinguish individuals. For the individuals that are present in dataset 1 the best way to distinguish individuals is to add an additional id field, i.e. “ind_id” for every individual. This however, is very laborious doing this for all 53513 records, since the data records have a relatively high variety it is not recommended to attempt scripting everything, this will still create many errors (e.g. dr. P.J.B.K.S. van der Aa has 3 different ways of writing). There are ways of doing this, however there will always be a loss in accuracy for this. 
+
+![Figure 4](/images/figure4.png)
 
 A solution would be to at least filter the ministers that are present in dataset 1. Given that the step 7 produced 28867 records means that at least that much records could be automatically linked to an individual from the 53513 records. 
