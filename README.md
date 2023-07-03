@@ -36,20 +36,8 @@ In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.
 
 ## Data Harmonization
 
-### Activity 1. Harmonization of Repertorium Academicum Neerlandicum (RAN). 
-As part of the data harmonization phase, two datasets need to be integrated which together form the Repertorium Academicum Neerlandicum. Database Dutch Reformed Clergy 1555-1816 (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 (predikantenbestand ca1572-ca2004.accdb)
+[Activity 1. Harmonization of Repertorium Academicum Neerlandicum (RAN).](/act1/) 
 
-The first dataset is the Database Dutch Reformed Clergy 1555-2004 (Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below. 
+[Activity 2. Connecting with Biography portal.](/act2/)
 
-> Aalst; Wilhelmus
-> Gedoopt Biggekerke 5 jan. 1664; pred. Aardenburg 22 mei 1695, overl. 19 dec. 1700.<4>
->
-> Aalst, van; Cornelius
-> Geb. Castricum ca. 1686; ambassadepred. in Parijs maart tot dec. 1715; pred. Kalslagen ber. 21 febr. 1717, emer. 1751; overl. Amsterdam 27 aug. 1756.<2>
-> 
-> Aalst, van; Gerardus
-> Geb. xxx sept. 1678; pred. Vuren en Dalem 10 aug. 1704, Sommelsdijk 13 juni 1706, West Zaandam 4 aug. 1715, emer. 1755; overl. 29 juni 1759.<3>
-
-In its current form it is not possible to for instance categorize persons based on the place that they were born or years that they were active in a certain church. Therefore, the first steps that need to be taken is to map the dataset into a relation database (RD). By doing so a series of basic and more analysis methods will become present. Putting it into a RD would allow to for instance make a sub- selection of persons that were active in a specific decade in a certain province. Furthermore, it allows for more complex analyses such as network analysis to see which individuals lived near to each other and eventually allowing it to be linked with other datasets such as STCN.
-
-[On the following page the process of converting the RAN into a RD are described in detail.](/act1/convert_RAN_RD.md) 
+[Activity 3. Geocoding RAN](/act3/)
