@@ -94,6 +94,7 @@ Will result in following:
 
 NB: Step 8 has also been performed for the child table produced for ministers under step 7.  
 
+The jupyther notebook that converts the textfile into a relational database can be accessed [here](act1/conversion_text_to_table_minister.ipynb)
 
 # Dataset 2 - Dutch Ministers 1572-2004
 
