@@ -1,7 +1,7 @@
 # DigiDuRe
 This repository contains code and scripts developed for the [Digital Dutch Religion Portal 1500-2000 project](https://research-software-directory.org/projects/digidure).
 
-The project aims to map long-term developments in Dutch public discourse, especially in religion. To do so, it will link the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)), the Dutch Biography Portal ([BP](www.biografischportaal.nl)), the Repertorium Academicum Neerlandicum (RAN ~ not available in the public domain) and various other open-access databases. 
+The project aims to map long-term developments in Dutch public discourse, especially in religion. To do so, it will link the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)), the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)), the Repertorium Academicum Neerlandicum (RAN ~ not available in the public domain) and various other open-access databases. 
 Through a connection between the various datasets an analysis of book titles and connected meta-data can be performed which is anticipated to deliver a bottom-up reconstruction of trends and changes in thematization. Though many fields of history may profit from this experiment in digital history, the focus on religion will stimulate innovations in this subdiscipline.
 
 ## Overview of activities within the project
@@ -21,7 +21,7 @@ i.  Short-Title Catalogue Netherlands [STCN](http://data.bibliotheken.nl/doc/dat
 
 ii. Gemeenschappelijk Geautomatiseerde Catalogiseersysteem [GGC](https://www.oclc.org/nl/ggc.html)
 
-iii. the Dutch Biography Portal [BP](www.biografischportaal.nl)
+iii. the Dutch Biography Portal [BP](www.biografischportaal.nl/)
 
 iv. Repertorium Academicum Neerlandicum (not available in the public domain)
 
