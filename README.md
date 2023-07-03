@@ -13,7 +13,7 @@ Roughly the project can be divided in five core activities.
 3. **Dissemination**: The knowledge from the previous steps will be disseminated allowing these to be reproduced by other scholars. 
 4. **Long Term Sustainability**: Finally, all the scripts for harmonization and analyses need to be stored in a sustainable manner allowing it to be reused.
 
-![Figure 1 shown a schematic overview on the various activities and shows that the activities are nonlinear, meaning that especially between the data harmonization and data analysis phase iterations will take place.](/images/Picture1.png)
+![Figure 1 shown a schematic overview on the various activities and shows that the activities are nonlinear, meaning that especially between the data harmonization and data analysis phase iterations will take place.](/images/figure1.png)
 
 
 Given the number of datasets that the projects aims to integrate, the steps above will not be taken in a linear way. Instead, the activities will be performed in an iterative manner. Meaning that we are first going to link two datasets and perform a series of analyses (going through steps 1-3), followed by integrating another dataset and later on another one etc. . 
