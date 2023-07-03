@@ -92,7 +92,7 @@ Will result in following:
 
 NB: Step 8 has also been performed for the child table produced for ministers under step 7.  
 
-The jupyther notebook that converts the textfile into a relational database can be accessed [here](act1/conversion_text_to_table_minister.ipynb)
+The jupyther notebook that converts the textfile into a relational database can be accessed [here](/conversion_text_to_table_minister.ipynb)
 
 # Dataset 2 - Dutch Ministers 1572-2004
 
@@ -117,6 +117,3 @@ An initial round of corrections has been executed and produced an updated list. 
 -	“predikant” does not start with a number
 -	how many semicolons there are in field “predikant” (and if not 1 put in the list to check)
 -	whether “predikant” starts with a space
-Once these are checked, the next step is to distinguish individuals. For the individuals that are present in dataset 1 the best way to distinguish individuals is to add an additional id field, i.e. “ind_id” for every individual. This however, is very laborious doing this for all 53513 records, since the data records have a relatively high variety it is not recommended to attempt scripting everything, this will still create many errors (e.g. dr. P.J.B.K.S. van der Aa has 3 different ways of writing). There are ways of doing this, however there will always be a loss in accuracy for this. 
-
-A solution would be to at least filter the ministers that are present in dataset 1. Given that the step 7 produced 28867 records means that at least that much records could be automatically linked to an individual from the 53513 records. 
