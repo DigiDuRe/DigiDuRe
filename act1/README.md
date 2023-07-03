@@ -17,8 +17,6 @@ In its current form it is not possible to for instance categorize persons based 
 
 Below a simplified workflow on the transformation steps that are taken to transform the text file into a RD is provided.
 
-A jupyter nodebook containing all the details can be accessed [here](act1/conversion_text_to_tables_minister.ipynb)
-
 The overall principle for the steps that have been taken is that the information of an individual is stored on a single line and that all characteristics are parsed into separate columns. This is done by adding a semicolon ; between distinguishable items. 
 
 ### Step 1.
