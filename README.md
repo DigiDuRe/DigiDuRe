@@ -1,7 +1,7 @@
 # DigiDuRe
 This repository contains code and scripts developed for the [Digital Dutch Religion Portal 1500-2000 project](https://research-software-directory.org/projects/digidure).
 
-The project aims to map long-term developments in Dutch public discourse, especially in religion. To do so, it will link the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)), the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)), the Repertorium Academicum Neerlandicum (RAN ~ not available in the public domain) and various other open-access databases. 
+The project aims to map long-term developments in Dutch public discourse, especially in religion. To do so, it will link the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)), the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)), the Database Dutch Reformed Clergy (DDRC) ~ not available in the public domain ~ and various other open-access databases. 
 Through a connection between the various datasets an analysis of book titles and connected meta-data can be performed which is anticipated to deliver a bottom-up reconstruction of trends and changes in thematization. Though many fields of history may profit from this experiment in digital history, the focus on religion will stimulate innovations in this subdiscipline.
 
 ## Overview of activities within the project
@@ -20,7 +20,7 @@ Given the number of datasets that the projects aims to integrate, the steps abov
 
 ### Datasets that are envisioned to be used in the project are
 
-i. Repertorium Academicum Neerlandicum (not available in the public domain)
+i. Database Dutch Reformed Clergy (DDRC) (currently not available in the public domain)
 
 ii. Gemeenschappelijk Geautomatiseerde Catalogiseersysteem [GGC](https://www.oclc.org/nl/ggc.html)
 
@@ -29,15 +29,14 @@ iii. the Dutch Biography Portal [BP](www.biografischportaal.nl/)
 iv.  Short-Title Catalogue Netherlands [STCN](http://data.bibliotheken.nl/doc/dataset/stcn)
 
 
-
 Furthermore, we envision that a link will be made with [Dutch Historical Dictionaries](https://ivdnt.org/woordenboeken/historische-woordenboeken/#historical-dictionaries)
 
 In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.nl/cms/projectportfolio/kerkenkaart-2/) and the [monastries](https://geoplaza.vu.nl/cms/projectportfolio/kloosterkaart/) database is likely to be made and will be explored.
 
 ## Data Harmonization
 
-[Activity 1. Harmonization of Repertorium Academicum Neerlandicum (RAN).](/act1/) 
+[Activity 1. Harmonization of Database Dutch Reformed Clergy (DDRC).](/act1/) 
 
 [Activity 2. Connecting with Biography portal.](/act2/)
 
-[Activity 3. Geocoding RAN](/act3/)
+[Activity 3. Geocoding DDRC](/act3/)
