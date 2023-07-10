@@ -93,7 +93,7 @@ Will result in following:
 
 NB: Step 8 has also been performed for the child table produced for ministers under step 7.  
 
-The jupyther notebook that converts the textfile into a relational database can be accessed [here](/conversion_text_to_table_minister.ipynb)
+The jupyther notebook that converts the textfile into a relational database can be accessed [here](/act1/conversion_text_to_table_minister.ipynb)
 
 # Dataset 2 - Dutch Ministers (DM) 1572-2004
 
@@ -121,5 +121,5 @@ A round of corrections has been executed and produced an updated list. Furthermo
 -	how many semicolons there are in field “predikant” (and if not 1 put in the list to check)
 -	whether “predikant” starts with a space
 
-With this cleaned dataset the datasets from DM and DDRC are checked. The script that we developed for this can be accessed [here](/db_check_id.ipynb) 
+With this cleaned dataset the datasets from DM and DDRC are checked. The script that we developed for this can be accessed [here](/act1/db_check_id.ipynb) 
   
