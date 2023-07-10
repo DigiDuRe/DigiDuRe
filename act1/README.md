@@ -1,21 +1,22 @@
-# Activity 1. Harmonization of Repertorium Academicum Neerlandicum (RAN).
+# Activity 1. Harmonization of Dutch Reformed Clergy (DRC).
 
-As part of the data harmonization phase, two datasets need to be integrated which together form the Repertorium Academicum Neerlandicum. Database Dutch Reformed Clergy 1555-1816 (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 (predikantenbestand ca1572-ca2004.accdb)
+As part of the data harmonization phase, two datasets need to be integrated which together form the Database Dutch Reformed Clergy 1555-1816 dataset (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 dataset(predikantenbestand ca1572-ca2004.accdb).
 
 ## Dataset 1 - Database Dutch Reformed Clergy 1555-1816
-The first dataset is the Database Dutch Reformed Clergy 1555-2004 (Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below.
+The first dataset is the Database Dutch Reformed Clergy 1555-2004 (stored as Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below.
 
 > Aalst; Wilhelmus Gedoopt Biggekerke 5 jan. 1664; pred. Aardenburg 22 mei 1695, overl. 19 dec. 1700.<4>
-
+>
 > Aalst, van; Cornelius Geb. Castricum ca. 1686; ambassadepred. in Parijs maart tot dec. 1715; pred. Kalslagen ber. 21 febr. 1717, emer. 1751; overl. Amsterdam 27 aug. 1756.<2>
-
+>
 > Aalst, van; Gerardus Geb. xxx sept. 1678; pred. Vuren en Dalem 10 aug. 1704, Sommelsdijk 13 juni 1706, West Zaandam 4 aug. 1715, emer. 1755; overl. 29 juni 1759.<3>
+>
 
 In its current form it is not possible to for instance categorize persons based on the place that they were born or years that they were active in a certain church. Therefore, the first steps that need to be taken is to map the dataset into a relation database (RD). By doing so a series of basic and more analysis methods will become present. Putting it into a RD would allow to for instance make a sub- selection of persons that were active in a specific decade in a certain province. Furthermore, it allows for more complex analyses such as network analysis to see which individuals lived near to each other and eventually allowing it to be linked with other datasets such as STCN.
 
 # Conversion steps Database Dutch Reformed Clergy 1555-2004 text file into RD.
 
-Below a simplified workflow on the transformation steps that are taken to transform the text file into a RD is provided.
+Below a simplified workflow on the transformation steps that are taken to transform the text file into a RD is provided. The jupyter notebook provides the actual code.
 
 The overall principle for the steps that have been taken is that the information of an individual is stored on a single line and that all characteristics are parsed into separate columns. This is done by adding a semicolon ; between distinguishable items. 
 
