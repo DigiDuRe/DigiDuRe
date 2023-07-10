@@ -1,21 +1,22 @@
-# Activity 1. Harmonization of Repertorium Academicum Neerlandicum (RAN).
+# Activity 1. Harmonization of Database Dutch Reformed Clergy (DDRC).
 
-As part of the data harmonization phase, two datasets need to be integrated which together form the Repertorium Academicum Neerlandicum. Database Dutch Reformed Clergy 1555-1816 (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 (predikantenbestand ca1572-ca2004.accdb)
+As part of the data harmonization phase, two datasets need to be integrated which together form the Database Dutch Reformed Clergy 1555-1816 dataset (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 dataset(predikantenbestand ca1572-ca2004.accdb).
 
-## Dataset 1 - Database Dutch Reformed Clergy 1555-1816
-The first dataset is the Database Dutch Reformed Clergy 1555-2004 (Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below.
+## Dataset 1 - Database Dutch Reformed Clergy (DDRC) 1555-1816
+The first dataset is the Database Dutch Reformed Clergy 1555-2004 (stored as Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below.
 
 > Aalst; Wilhelmus Gedoopt Biggekerke 5 jan. 1664; pred. Aardenburg 22 mei 1695, overl. 19 dec. 1700.<4>
-
+>
 > Aalst, van; Cornelius Geb. Castricum ca. 1686; ambassadepred. in Parijs maart tot dec. 1715; pred. Kalslagen ber. 21 febr. 1717, emer. 1751; overl. Amsterdam 27 aug. 1756.<2>
-
+>
 > Aalst, van; Gerardus Geb. xxx sept. 1678; pred. Vuren en Dalem 10 aug. 1704, Sommelsdijk 13 juni 1706, West Zaandam 4 aug. 1715, emer. 1755; overl. 29 juni 1759.<3>
+>
 
 In its current form it is not possible to for instance categorize persons based on the place that they were born or years that they were active in a certain church. Therefore, the first steps that need to be taken is to map the dataset into a relation database (RD). By doing so a series of basic and more analysis methods will become present. Putting it into a RD would allow to for instance make a sub- selection of persons that were active in a specific decade in a certain province. Furthermore, it allows for more complex analyses such as network analysis to see which individuals lived near to each other and eventually allowing it to be linked with other datasets such as STCN.
 
 # Conversion steps Database Dutch Reformed Clergy 1555-2004 text file into RD.
 
-Below a simplified workflow on the transformation steps that are taken to transform the text file into a RD is provided.
+Below a simplified workflow on the transformation steps that are taken to transform the text file into a RD is provided. The jupyter notebook provides the actual code.
 
 The overall principle for the steps that have been taken is that the information of an individual is stored on a single line and that all characteristics are parsed into separate columns. This is done by adding a semicolon ; between distinguishable items. 
 
@@ -92,29 +93,33 @@ Will result in following:
 
 NB: Step 8 has also been performed for the child table produced for ministers under step 7.  
 
-The jupyther notebook that converts the textfile into a relational database can be accessed [here](/conversion_text_to_table_minister.ipynb)
+The jupyther notebook that converts the textfile into a relational database can be accessed [here](/act1/conversion_text_to_table_minister.ipynb)
 
-# Dataset 2 - Dutch Ministers 1572-2004
+# Dataset 2 - Dutch Ministers (DM) 1572-2004
 
-Besides dataset 1, presented above, an integration with another dataset, Dutch Ministers 1572-2004 (predikantenbestand ca1572-ca2004.accdb) containing information about the careers, needs to be made as well. The dataset that needs to be integrated has been created by one of Van Lieburg´s student assistants in the past and is said to contain more up to date information where individuals acted as ministers. The dataset contains the careers of the various ministers and tells where they have acted as “predikant” (minister). The data has been stored as a separate table where every moment a new position as minister was taken have been stored in a separate row (figure 2). In case an individual had more positions as minister in its career this dataset contains multiple rows for that individual. For instance, Isaäc Abbema in the example had two posts one from 1618 to 1635 in Berkenwoude and from 1635 to 1637 in Gouda.  
+Besides dataset 1, presented above, an integration with another dataset, Dutch Ministers (DM) 1572-2004 (predikantenbestand ca1572-ca2004.accdb) containing information about the careers, needs to be made as well. The dataset that needs to be integrated has been created by one of Van Lieburg´s student assistants in the past and is said to **contain more up to date information** where individuals acted as ministers. The dataset contains the careers of the various ministers and tells where they have acted as “predikant” (minister). The data is stored as a separate table where every moment a new position as minister was taken have been stored in a separate row (figure 2). In case an individual had more positions as minister in its career this dataset contains multiple rows for that individual. For instance, Isaäc Abbema in the example had two posts one from 1618 to 1635 in Berkenwoude and from 1635 to 1637 in Gouda.  
 
 ![Figure 2 Dutch Ministers 1572-2004](/images/figure2.png)
 
 **Figure 2 Dutch Ministers 1572-2004**
 
-Contrary to Dataset 1, this dataset also contains data about ministers that started their careers after 1815. For the RAN van Lieburg wants to use this dataset as the starting point for the individual ministers. However, something that makes this dataset complicated to work with is that over time people had the same name. Out of the 53646 records this dataset contains, 25082 times exactly the same name is used. However, counting the number of times a name is used, where every count would be a step in its career, results in unfeasible career paths. J. de Jong would have had 30 positions. Looking closely at the dataset “J. de Jong” appears to be a name that, not surprisingly, represents multiple individuals. 
+Contrary to Dataset 1/ DDRC, this dataset also contains data about ministers that started their careers after 1815. For the DDRC van Lieburg (the Lead Applicant of the project) wants to use this dataset as the starting point for the individual ministers. However, something that makes this dataset complicated to work with is that over time people had the same name and individuals are not easily distinguishable since no unique ID is provided. Yet, the Lead applicant is certaOut of the 53646 records this dataset contains, 25082 times exactly the same name is used. However, counting the number of times a name is used, where every count would be a step in its career, results in unfeasible career paths. J. de Jong would have had 30 positions over an unfeasible long period of time. Looking closely at the dataset “J. de Jong” appears to be a name that, not surprisingly in the Netherlands, represents multiple individuals. 
 
 ![Figure 3](/images/figure3.png)
 
-To use this dataset as a starting point the individuals need to be distilled from it. 
-However, before doing that some errors in the dataset needs to be fixed. A quick scan of the dataset revealed a series of errors listed below. 
+As a strategy in this harmonization process we have decided to take the DDRC as a starting point. To take DM as starting point is currently not feasible, since individuals are difficult to distinguish. However taking DDRC as a starting point is also difficult since the locations where ministers were stationed seems to be not accurate. We have therefore made a join between locations that came out of the notebook above on the combination name, infix, surname, placename, year and counted the number of ministers where these where exactly the same. Next we compared the number of identical positions minister had in DDRC and DM that exactly matched (thus where name, infix, surname, placename and year are identical). By comparing the counts of fields there are exactly the same with each other we are able to see if the individual ministers in DDRC are complete. For those where the number of matching positions do not match a database is created that needs to be curated.
+
+However before performing this harmonzation step, the DM needs to be cleaned. A thorough analysis scan of the dataset revealed a series of errors listed below. 
 -	Information is stored in wrong column. 
 -	Spaces in front of name (make it difficult to link)
 -	; between name and surname is lacking, making it at a later stage difficult to split these
 -	Many individuals have only one value in the field predikant, making it difficult to link these thus it is difficult to distinguish surname or name 
 
-An initial round of corrections has been executed and produced an updated list. Furthermore, it contains 131 records that still needs to be checked. This however does not mean that the rest of the file does not contain any errors. This data cleaning only looked at the following issues:
+A round of corrections has been executed and produced an updated list. Furthermore, it contains 131 records that still needs to be checked. This however does not mean that the rest of the file does not contain any errors. This data cleaning only looked at the following issues:
 -	whether “jaar intrede” has a numeric value
 -	“predikant” does not start with a number
 -	how many semicolons there are in field “predikant” (and if not 1 put in the list to check)
 -	whether “predikant” starts with a space
+
+With this cleaned dataset the datasets from DM and DDRC are checked. The script that we developed for this can be accessed [here](/act1/db_check_id.ipynb) 
+  
