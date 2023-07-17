@@ -1,4 +1,4 @@
-![image](https://github.com/Morrizzzzz/DigiDuRe/assets/3584547/bdaf29e6-fef6-4f31-955b-1af007746823)# Connecting dataset from Biography portal of the Netherlands to RAN
+# Connecting dataset from Biography portal of the Netherlands to RAN
 
 In order to connect inidividuals from the [Dutch Biography Portal](http://www.biografischportaal.nl/en/) we have been given an excel sheet from the datacurator from behind this portal. The dataset we have been provided with contains the following fields.
 
