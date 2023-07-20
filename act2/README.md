@@ -33,9 +33,9 @@ In order to connect inidividuals from the [Dutch Biography Portal](http://www.bi
 
 To link individuals from the our dataset with this portal we looked at the first letter of the name, the infix, the surname and the year of birth.
 
-From DDRC these are the first letter from name followed by infix, surname and year_birth. From BP these are the first letter of voornaam, intrapositie, geslachtsnaam, event_birth_when. For event_birth_when the first 4 digital number has been isolated assuming that is the year of birth.
+From CLERUS these are the first letter from name followed by infix, surname and year_birth. From BP these are the first letter of voornaam, intrapositie, geslachtsnaam, event_birth_when. For event_birth_when the first 4 digital number has been isolated assuming that is the year of birth.
 
-For field where these corresponded we have created a list containing the Bioport_id and DDRC_id. In total this resulted in 1199 matches between the biography portal and the DDRC created in [activity 1](../act1). 
+For field where these corresponded we have created a list containing the Bioport_id and clerus_id. In total this resulted in 1199 matches between the biography portal and the CLERUS created in [activity 1](../act1). 
 
 The script that executed this analysis can be found [here](../act1/biography_portal_data.ipynb) in the form of a Jupyter Notebook.
 

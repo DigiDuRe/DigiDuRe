@@ -1,8 +1,8 @@
-# Activity 1. Harmonization of Database Dutch Reformed Clergy (DDRC).
+# Activity 1. Harmonization of CLERUS.
 
-As part of the data harmonization phase, two datasets need to be integrated which together form the Database Dutch Reformed Clergy 1555-1816 dataset (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 dataset(predikantenbestand ca1572-ca2004.accdb).
+As part of the data harmonization phase, two datasets need to be integrated which together form the Database Dutch Reformed Clergy 1555-1816 dataset (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 dataset(predikantenbestand ca1572-ca2004.accdb), together they form a new dataset which we name CLERUS.
 
-## Dataset 1 - Database Dutch Reformed Clergy (DDRC) 1555-1816
+## Dataset 1 - Database Dutch Reformed Clergy (DRC) 1555-1816
 The first dataset is the Database Dutch Reformed Clergy 1555-2004 (stored as Repertoriummetoudepersoonsnummers.docx) provided by the lead applicant. This dataset contains biographical information and career path information of Dutch ministers that started after 1555 until the starting data 1816. This means that it does contain careers that continue after 1816. The dataset contains 12558 individuals which are systematically registered in a text file of which a sample is provided below.
 
 > Aalst; Wilhelmus Gedoopt Biggekerke 5 jan. 1664; pred. Aardenburg 22 mei 1695, overl. 19 dec. 1700.<4>
@@ -27,7 +27,7 @@ To get alle the information of the file into single rows per individual the firs
 > Aalst, van; Gerardus Geb. xxx sept. 1678; pred. Vuren en Dalem 10 aug. 1704, Sommelsdijk 13 juni 1706, West Zaandam 4 aug. 1715, emer. 1755; overl. 29 juni 1759.<3>
 
 ### Step 2.
-To isolate the IDs into a column once read as a .csv file a semicolon is added in front of the < and after the > sign. 
+To isolate the IDs into a column once read as a .csv file a semicolon is added in front of the < and after the > sign. We decided to call the ids clerus_id.
 
 ### Step 3. 
 In the original dataset the various characteristics of an individual are distinguished using s semicolon. However, this is not done in a systematic way (e.g Geb. and  emer. Are not separated with a semicolon. Therefore, a search on the various distinguishable key strings is performed and a semicolon is added. Key strings that we searched for are: 
@@ -86,7 +86,7 @@ For instance:
 > Aalst, van; Gerardus Geb. xxx sept. 1678; pred. Vuren en Dalem 10 aug. 1704, Sommelsdijk 13 juni 1706, West Zaandam 4 aug. 1715, emer. 1755; overl. 29 juni 1759.<3>
 
 Will result in following:
-| id  | surname | infix | name | birth | year_birth | accu_year_birth | ... | ... | etc. |
+| clerus_id  | surname | infix | name | birth | year_birth | accu_year_birth | ... | ... | etc. |
 |---|---|---|---|---|---|---|---|---|---|
 | 2 |	Aalst |	van	| Cornelius	| Castricum	| 1686	|circa | | | |				
 | 3	| Aalst	| van |	Gerardus |	|	1678	|	|	|	|	|
@@ -103,11 +103,11 @@ Besides dataset 1, presented above, an integration with another dataset, Dutch M
 
 **Figure 2 Dutch Ministers 1572-2004**
 
-Contrary to Dataset 1/ DDRC, this dataset also contains data about ministers that started their careers after 1815. For the DDRC van Lieburg (the Lead Applicant of the project) wants to use this dataset as the starting point for the individual ministers. However, something that makes this dataset complicated to work with is that over time people had the same name and individuals are not easily distinguishable since no unique ID is provided. Yet, the Lead applicant is certaOut of the 53646 records this dataset contains, 25082 times exactly the same name is used. However, counting the number of times a name is used, where every count would be a step in its career, results in unfeasible career paths. J. de Jong would have had 30 positions over an unfeasible long period of time. Looking closely at the dataset “J. de Jong” appears to be a name that, not surprisingly in the Netherlands, represents multiple individuals. 
+Contrary to Dataset 1/ DRC, this dataset also contains data about ministers that started their careers after 1815. For the DRC van Lieburg (the Lead Applicant of the project) wants to use this dataset as the starting point for the individual ministers. However, something that makes this dataset complicated to work with is that over time people had the same name and individuals are not easily distinguishable since no unique ID is provided. Yet, the Lead applicant is certaOut of the 53646 records this dataset contains, 25082 times exactly the same name is used. However, counting the number of times a name is used, where every count would be a step in its career, results in unfeasible career paths. J. de Jong would have had 30 positions over an unfeasible long period of time. Looking closely at the dataset “J. de Jong” appears to be a name that, not surprisingly in the Netherlands, represents multiple individuals. 
 
 ![Figure 3](/images/figure3.png)
 
-As a strategy in this harmonization process we have decided to take the DDRC as a starting point. To take DM as starting point is currently not feasible, since individuals are difficult to distinguish. However taking DDRC as a starting point is also difficult since the locations where ministers were stationed seems to be not accurate. We have therefore made a join between locations that came out of the notebook above on the combination name, infix, surname, placename, year and counted the number of ministers where these where exactly the same. Next we compared the number of identical positions minister had in DDRC and DM that exactly matched (thus where name, infix, surname, placename and year are identical). By comparing the counts of fields there are exactly the same with each other we are able to see if the individual ministers in DDRC are complete. For those where the number of matching positions do not match a database is created that needs to be curated.
+As a strategy in this harmonization process we have decided to take the DRC as a starting point. To take DM as starting point is currently not feasible, since individuals are difficult to distinguish. However taking DRC as a starting point is also difficult since the locations where ministers were stationed seems to be not accurate. We have therefore made a join between locations that came out of the notebook above on the combination name, infix, surname, placename, year and counted the number of ministers where these where exactly the same. Next we compared the number of identical positions minister had in DRC and DM that exactly matched (thus where name, infix, surname, placename and year are identical). By comparing the counts of fields there are exactly the same with each other we are able to see if the individual ministers in DRC are complete. For those where the number of matching positions do not match a database is created that needs to be curated.
 
 However before performing this harmonzation step, the DM needs to be cleaned. A thorough analysis scan of the dataset revealed a series of errors listed below. 
 -	Information is stored in wrong column. 
@@ -121,5 +121,5 @@ A round of corrections has been executed and produced an updated list. Furthermo
 -	how many semicolons there are in field “predikant” (and if not 1 put in the list to check)
 -	whether “predikant” starts with a space
 
-With this cleaned dataset the datasets from DM and DDRC are checked. The script that we developed for this can be accessed [here](/act1/db_check_id.ipynb) 
+With this cleaned dataset the datasets from DM and DRC are checked. The script that we developed for this can be accessed [here](/act1/db_check_id.ipynb) 
   
