@@ -1,3 +1,6 @@
+import pandas as pd
+from SPARQLWrapper import SPARQLWrapper, JSON
+
 def sparql_to_dataframe(sparql_endpoint, sparql_query):
     sparql = SPARQLWrapper(sparql_endpoint)
     sparql.setQuery(sparql_query)
