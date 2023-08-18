@@ -4,7 +4,7 @@ def replace_pred_count(string):
     position = string.find(" pred.")
 
     while position != -1:
-        result += string[:position] + str(count) + " pred."
+        result += string[:position] + "zx"+ str(count) + " pred."
         string = string[position + len(" pred."):]
         count += 1
         position = string.find(" pred.")
