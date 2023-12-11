@@ -8,13 +8,12 @@ A structured dataset with carreers of protestant ministers and individuals that 
 
 2. **Data linking**
 In order to analyse book titles in relation to protestant persons, datasets need to be linked. Linking dataset which each other is on the one hand a technical challenge. It entails making sure that the various file formats communicate with each other and that the content of fields overlap. For names the combination of surname, firstname and infix are considered unique, however not every dataset has this combination stored in the same way. Also, variety in name spelling and individuals having the same name is an issue when connecting dataset with other.
-
 The project produces a script which allows to extract various datasets, allowing them to be linked from a technical point. Furthermore, a series of methods to connect the datasets with each other are prepared. Datasource that are connected are the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)). In addition, datasources on individuals are connected from the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)).
 
-3. **Data Analysis**
+4. **Data Analysis**
 Through the connection of the various datasets an analysis of book titles and connected meta-data can be performed which is anticipated to deliver a bottom-up reconstruction of trends and changes in thematization. Though many fields of history will benefit from work in digital history, the focus on religion will stimulate new insights in this subdiscipline.
 
-4. **Dissemination**
+5. **Dissemination**
 A vital part of this project is also to train the history scholars in how to work with data. Therefore, the steps that have been taken in this project are well documented and training material has been produced in which certain concepts are introduced and explained.
 Another aspect of the dissemination is that the data can be accessed in various formats. Therefore an additional script is developed to publish the data as linked data.
 
