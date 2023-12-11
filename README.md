@@ -1,42 +1,23 @@
 # DigiDuRe
-This repository contains code and scripts developed for the [Digital Dutch Religion Portal 1500-2000 project](https://research-software-directory.org/projects/digidure).
+This repository contains code and scripts developed for the [Digital Dutch Religion Portal 1500-2000 project](https://research-software-directory.org/projects/digidure) a project that has been a collaboration between the [Vrije Universiteit Amsterdam, Faculity of Humanities, HDC](https://vu.nl/nl/over-de-vu/diensten/universiteitsbibliotheek/meer-over/collectie-hdc-protestants-erfgoed]) and the [Netherlands eScience Center](www.esciencecenter.nl). The main researcher from the VU is [prof. dr. Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg), the lead engineer from the escience Center is [Dr. Maurice de Kleijn](https://www.esciencecenter.nl/team/dr-maurice-de-kleijn/).
 
-The project aims to map long-term developments in Dutch public discourse, especially in religion. To do so, it will link the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)), the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)), the Database Dutch Reformed Clergy , which we named CLERUS ~ not available in the public domain ~ and various other open-access databases. 
-Through a connection between the various datasets an analysis of book titles and connected meta-data can be performed which is anticipated to deliver a bottom-up reconstruction of trends and changes in thematization. Though many fields of history may profit from this experiment in digital history, the focus on religion will stimulate innovations in this subdiscipline.
+The project aims to map long-term developments in Dutch public discourse, especially in religion. An analysis of book titles and connected meta-data with multiple other data sources should deliver a bottom-up reconstruction of trends and changes in thematization. To do so three main activities are defined.
 
-## Overview of activities within the project
+1. **Data Harmonzation - Protestant persons**
+A structured dataset with carreers of protestant ministers and individuals that passed the exam that allows them to act as protestant minister from 1500 until 2000 needs to be created out of a series of semi-structured datasources that have been generated as a result of archival historical research conducted over the last 30 years. This process is considered data harmonization and entails the modelling of the data structure and a series of processing steps to translate the data from the one format / structure to the other. This results in a new dataset named CLERUS - Database Dutch Reformed Clergy.
 
-Roughly the project can be divided in five core activities. 
+2. **Data linking**
+In order to analyse book titles in relation to protestant persons, datasets need to be linked. Linking dataset which each other is on the one hand a technical challenge. It entails making sure that the various file formats communicate with each other and that the content of fields overlap. For names the combination of surname, firstname and infix are considered unique, however not every dataset has this combination stored in the same way. Also, variety in name spelling and individuals having the same name is an issue when connecting dataset with other.
 
-1. **Data Harmonization:** First, the various data sources need to harmonized. It must become clear how the various datasets can be connected and what possible conversions need to be made in order to do so. As a first step we therefore aim to map the various database schemas that we want to connect. Once the database schemas are clear, the technical steps need to be taken to actually link the various datasets in order for them to be linked and enriched.
-2. **Data Analysis**: The moment the datasets are linked/connected, a series of analysis methods can be performed. Queries combined with statistic and or network analysis methods will be applied to identify relevant connections in the datasets. 
-3. **Dissemination**: The knowledge from the previous steps will be disseminated allowing these to be reproduced by other scholars. 
-4. **Long Term Sustainability**: Finally, all the scripts for harmonization and analyses need to be stored in a sustainable manner allowing it to be reused.
+The project produces a script which allows to extract various datasets, allowing them to be linked from a technical point. Furthermore, a series of methods to connect the datasets with each other are prepared. Datasource that are connected are the Short-Title Catalogue Netherlands ([STCN]( http://data.bibliotheken.nl/doc/dataset/stcn)) dataset, the Gemeenschappelijk Geautomatiseerde Catalogiseersysteem ([GGC](https://www.oclc.org/nl/ggc.html)). In addition, datasources on individuals are connected from the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)).
 
-![Figure 1 shown a schematic overview on the various activities and shows that the activities are nonlinear, meaning that especially between the data harmonization and data analysis phase iterations will take place.](/images/figure1.png)
+3. **Data Analysis**
+Through the connection of the various datasets an analysis of book titles and connected meta-data can be performed which is anticipated to deliver a bottom-up reconstruction of trends and changes in thematization. Though many fields of history will benefit from work in digital history, the focus on religion will stimulate new insights in this subdiscipline.
 
+4. **Dissemination**
+A vital part of this project is also to train the history scholars in how to work with data. Therefore, the steps that have been taken in this project are well documented and training material has been produced in which certain concepts are introduced and explained.
+Another aspect of the dissemination is that the data can be accessed in various formats. Therefore an additional script is developed to publish the data as linked data.
 
-Given the number of datasets that the projects aims to integrate, the steps above will not be taken in a linear way. Instead, the activities will be performed in an iterative manner. Meaning that we are first going to link two datasets and perform a series of analyses (going through steps 1-3), followed by integrating another dataset and later on another one etc. . 
-
-### Datasets that are envisioned to be used in the project are
-
-i. CLERUS - Database Dutch Reformed Clergy (currently not available in the public domain)
-
-ii. Gemeenschappelijk Geautomatiseerde Catalogiseersysteem [GGC](https://www.oclc.org/nl/ggc.html)
-
-iii. the Dutch Biography Portal [BP](www.biografischportaal.nl/)
-
-iv.  Short-Title Catalogue Netherlands [STCN](http://data.bibliotheken.nl/doc/dataset/stcn)
+![Figure 1 shows a schematic overview on the various activities.](/images/figure1.png)
 
 
-Furthermore, we envision that a link will be made with [Dutch Historical Dictionaries](https://ivdnt.org/woordenboeken/historische-woordenboeken/#historical-dictionaries)
-
-In addition, a link with the [churches database 1800-1970] (https://geoplaza.vu.nl/cms/projectportfolio/kerkenkaart-2/) and the [monastries](https://geoplaza.vu.nl/cms/projectportfolio/kloosterkaart/) database is likely to be made and will be explored.
-
-## Data Harmonization
-
-[Activity 1. Harmonization of CLERUS.](/act1/) 
-
-[Activity 2. Connecting with Biography portal.](/act2/)
-
-[Activity 3. Geocoding DDRC](/act3/)
