@@ -19,5 +19,3 @@ A vital part of this project is also to train the history scholars in how to wor
 Another aspect of the dissemination is that the data can be accessed in various formats. Therefore an additional script is developed to publish the data as linked data.
 
 ![Figure 1 shows a schematic overview on the various activities.](/images/figure1.png)
-
-
