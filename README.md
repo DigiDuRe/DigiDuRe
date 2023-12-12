@@ -30,5 +30,5 @@ A vital part of this project is also to train the history scholars in how to wor
 Another aspect of the dissemination is that the data can be accessed in various formats. Therefore an additional script is developed to publish the data as linked data [1_Data_Harmonization](/1_Data_Harmonization/). The dissemination of the project is done in the form of this repository, furthermore [4_Dissemination](/4_Dissemination/) contains a series a workshop slides. 
 
 
-# Installtion instructions
+# Installation instructions
 The scripts that are developed in the context of the project are mostly done in jupyter notebooks using python 3. The installation instructions and the the various packages that are used can be found under [4_Dissemination/install_packages.md](/4_Dissemination/install_packages.md)
