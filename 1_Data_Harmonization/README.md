@@ -1,4 +1,8 @@
-# Activity 1. Harmonization of CLERUS.
+# 1. Harmonization of CLERUS.
+
+
+
+
 
 As part of the data harmonization phase, two datasets need to be integrated which together form the Database Dutch Reformed Clergy 1555-1816 dataset (Repertoriummetoudepersoonsnummers.docx) and Dutch Ministers 1572-2004 dataset(predikantenbestand ca1572-ca2004.accdb), together they form a new dataset which we name CLERUS.
 
