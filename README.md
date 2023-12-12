@@ -19,7 +19,9 @@ To link book title dataset with CLERUS we have decided to extract the data from 
 ## 2. **Data linking**
 In order to analyse book titles in relation to protestant persons (from CLERUS), datasets need to be linked. Linking datasets with each other is on the one hand a technical challenge. It entails making sure that the various file formats communicate with each other. On the other hand it is the challenge of linking records with each other. For example, for names the combination of surname, firstname and infix are often considered unique, however not every dataset has this combination stored in the same way. Also, variety in name spellings and individuals having the same name forms a challenge when attempting to connect datasets. 
 
-To connect data from the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)) a script has been developed under [activity 3](/act1/). In addition, a script has been developed that allows to link CLERUS with the Booktitles. 
+To connect data from the Dutch Biography Portal ([BP](http://www.biografischportaal.nl/)) a script has been developed under [activity 3](/act3/). In addition, a script has been developed that allows to link CLERUS with the Booktitles. 
+
+Furthermore, a geocoding script has been developed under [activity 3](/act3/).
 
 
 ## 3. **Data Analysis**
