@@ -41,7 +41,3 @@ This datasource is a recorded in 1747 and gave an overview of all the individual
 The datasource Naamregister provides and overview on all the proposition exams that have been executed between 1717 and 1739. Futhermore, it provided the first role of the proponent. It contains volumes for 1717 to 1739, excluding the years 1729, 1734 and 1735.
 
 For datasources 5 and 6 a process of manual curation has taken place and individuals that are part of DRC are identified. Therefore a description script and conversion script to CLERUS are relative straightforward and can be accessed [here](/1_56_Keppel_Naamregister.md)
-
-
-
-

@@ -127,11 +127,14 @@ CREATE TABLE "26_residence_alt_place" (
   "alt_place_name" VARCHAR(255)                   --alternative spelling for place name
 );
 
+DROP TABLE IF EXISTS "00_clerus_id_links";
+
 CREATE TABLE "00_clerus_id_links" (
-  "clerus_id" INTEGER DEFAULT 0,          --clerus_id key
-  "drc_id" INTEGER DEFAULT 0,             --key for drc 
-  "NR_bz" VARCHAR(255),                   --key for boekzaalijst
-  "keppel_id" VARCHAR(255),               --key for keppel dataset 
-  "DM_id" VARCHAR(255),                   --key for Dutch Ministers dataset
-  "ACTA_id" VARCHAR(255)                 --key for ACTA dataset
+  "clerus_id" INTEGER DEFAULT 0,                --clerus_id key
+  "drc_id" INTEGER DEFAULT 0,                   --key for drc 
+  "NR_bz" INTEGER DEFAULT 0,                    --key for boekzaalijst
+  "keppel_id" INTEGER DEFAULT 0,                --key for keppel dataset 
+  "DM_id" INTEGER DEFAULT 0,                    --key for Dutch Ministers dataset
+  "ACTA_id" INTEGER DEFAULT 0                   --key for ACTA dataset
+);
 );
