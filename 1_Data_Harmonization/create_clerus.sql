@@ -1,17 +1,3 @@
-# Data model CLERUS
-
-The development of the data model for CLERUS has been a dynamic process. Initially we applied a top down approach in which we defined all the various field that we would want it to exist. However in the process of the datacollection it appeared that the various datasets which are integrated for CLERUS did not contain the requested information.
-
-The datamodel that has been created can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_design.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_design.drawio).
-
-The database exists of seven tables. At the core of the database the table **01_clerus_bio** is put with the basic biographical information about an individual. it contains for instanc the name, surname, year of birth, year of death etc. for every person. The information from  **01_clerus_bio** is rather generic and is in theory not bound ministers only. Making a distinction between generic data and more contextual data is a deliberate decision in the design of the datamodel.
-
-## 01_clerus_bio
-
-A SQL code to create **01_clerus_bio** is provided below.
-
-```sql
-
 DROP TABLE IF EXISTS "01_clerus_bio";
 
 CREATE TABLE "01_clerus_bio" (
@@ -45,25 +31,14 @@ CREATE TABLE "01_clerus_bio" (
   "remarks" TEXT,                                   --remarks about the individual
   "remarks_source" TEXT,                            --remarks about the source (e.g. a reference to a source)
 );
-```
-## 02_drc_org
 
-As a one-to-one relationship with **01_clerus_bio** the table **02_drc_org** is installed. This table contains the original input form the [DRC text file](1_1_DRC_1555-1816.ipynb). The reason to not integrate this into **01_clerus_bio** is because the database design strategy is to make a distinction between generic and more contextual data. Furthermore, the final version of CLERUS will not contain this information for every individual, since it will also contain information from for instance [DM](1_2_DM_1572-2004.ipynb).
-
-```sql
 DROP TABLE IF EXISTS "02_drc_org";
 
 CREATE TABLE "02_drc_org" (
   "drc_id" INTEGER,                                 --Key that corresponds with the clerus_id in 01_clerus_bio. Since DRC is used as basis for CLERUS we decided to use the same value for CLERUS as used in DRC. Therefore the drc_id can be directly connected with the clerus_id.   
   "original_input_drc" TEXT                         --The original input text string from DRC
 );
-```
 
-## 03_clerus_exam
-
-The table **03_clerus_exam** contains information about the exam of an individual and is considered to have a one-to-one (one row for every inidividual where information about the exam date is known) relationship with **01_clerus_bio**, since the exam for getting the "proponent"-status, which allows to act as minister needs to be done only once.
-
-```sql
 DROP TABLE IF EXISTS "03_clerus_exam";
 
 CREATE TABLE "03_clerus_exam" (
@@ -78,12 +53,7 @@ CREATE TABLE "03_clerus_exam" (
   "commendati_classis_date_exact" INTEGER DEFAULT 0,--The exact date when someone got the commendati status
   "commendati_classis_year" INTEGER DEFAULT 0       --The year when someone got the commendati status
 );
-```
 
-## 11_clerus_alt_name
-Since individuals can have multiple alternative names, the table **11_clerus_alt_name** is considered a one to many relationship with **01_clerus_bio**.
-
-```sql
 DROP TABLE IF EXISTS "11_clerus_alt_name";
 
 CREATE TABLE "11_clerus_alt_name" (           
@@ -96,12 +66,7 @@ CREATE TABLE "11_clerus_alt_name" (
   "remarks_alt_name" TEXT,                          --remarks about the alternative name
   "alt_initials" VARCHAR(255)                       --alternative initials
 );
-```
 
-## 12_clerus_role
-The table **12_clerus_role** contains information about the various roles an individual could have had over time. Since an individual could have had multiple roles over time, **12_clerus_rols** has a one to many relationship with **01_clerus_bio**. The table also allows to add overlapping roles. 
-
-```sql
 DROP TABLE IF EXISTS "12_clerus_role";
 
 CREATE TABLE "12_clerus_role" (
@@ -125,11 +90,6 @@ CREATE TABLE "12_clerus_role" (
   "role_remarks" TEXT                               --remarks about the role
 );
 
-```
-## 2x_xxx_alt_place
-Within the dataset there are multiple field that contain information about place names. To allow for multiple alternative spellings of placenames a series of tables are generated which are linked as one to many relationships with the various tables presented above. 
-
-```sql
 DROP TABLE IF EXISTS "21_birth_alt_place";
 DROP TABLE IF EXISTS "22_baptism_alt_place";
 DROP TABLE IF EXISTS "23_death_alt_place";
@@ -166,14 +126,7 @@ CREATE TABLE "26_residence_alt_place" (
   "role_place_residence_id" INTEGER DEFAULT 0,    --foreign key for residence place
   "alt_place_name" VARCHAR(255)                   --alternative spelling for place name
 );
-```
 
-## 00_clerus_id_links
-The CLERUS dataset is created by integrating various structured and semi-structured datasources. Since it underwent a roudn of curation it is unclear where the values for all the fields orginally came from. Also, some fields are presen in multiple tables. It has therefore been decided to not save all the links of every individual source, but instead create a table which contains all the unique values of the various datasets and stores which are linked to the same individual,in this case through a unique **clerus_id** value.
-
-The table has a one to one relationship with **01_clerus_bio**. 
-
-```sql
 CREATE TABLE "00_clerus_id_links" (
   "clerus_id" INTEGER DEFAULT 0,          --clerus_id key
   "drc_id" INTEGER DEFAULT 0,             --key for drc 
@@ -182,6 +135,3 @@ CREATE TABLE "00_clerus_id_links" (
   "DM_id" VARCHAR(255),                   --key for Dutch Ministers dataset
   "ACTA_id" VARCHAR(255),                 --key for ACTA dataset
 );
-```
-
-The various SQL create tables can also be accessed as a .sql file here: [create_clerus.sql](create_clerus.sql)
