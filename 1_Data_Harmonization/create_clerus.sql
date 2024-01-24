@@ -133,5 +133,5 @@ CREATE TABLE "00_clerus_id_links" (
   "NR_bz" VARCHAR(255),                   --key for boekzaalijst
   "keppel_id" VARCHAR(255),               --key for keppel dataset 
   "DM_id" VARCHAR(255),                   --key for Dutch Ministers dataset
-  "ACTA_id" VARCHAR(255),                 --key for ACTA dataset
+  "ACTA_id" VARCHAR(255)                 --key for ACTA dataset
 );

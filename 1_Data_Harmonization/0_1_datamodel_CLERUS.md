@@ -2,7 +2,7 @@
 
 The development of the data model for CLERUS has been a dynamic process. Initially we applied a top down approach in which we defined all the various field that we would want it to exist. However in the process of the datacollection it appeared that the various datasets which are integrated for CLERUS did not contain the requested information.
 
-The datamodel that has been created can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_design.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_design.drawio).
+The schematic overview of the datamodel that has been created can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_design.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_design.drawio). The various tables the datamodel exists of are described below.
 
 The database exists of seven tables. At the core of the database the table **01_clerus_bio** is put with the basic biographical information about an individual. it contains for instanc the name, surname, year of birth, year of death etc. for every person. The information from  **01_clerus_bio** is rather generic and is in theory not bound ministers only. Making a distinction between generic data and more contextual data is a deliberate decision in the design of the datamodel.
 
@@ -180,7 +180,7 @@ CREATE TABLE "00_clerus_id_links" (
   "NR_bz" VARCHAR(255),                   --key for boekzaalijst
   "keppel_id" VARCHAR(255),               --key for keppel dataset 
   "DM_id" VARCHAR(255),                   --key for Dutch Ministers dataset
-  "ACTA_id" VARCHAR(255),                 --key for ACTA dataset
+  "ACTA_id" VARCHAR(255)                --key for ACTA dataset
 );
 ```
 
