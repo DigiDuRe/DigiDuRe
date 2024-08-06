@@ -1,47 +1,24 @@
-# Connecting dataset from Biography portal of the Netherlands to RAN
+# 2. Linking Dutch protestant minister data with external sources
 
-In order to connect inidividuals from the [Dutch Biography Portal](http://www.biografischportaal.nl/en/) we have been given an excel sheet from the datacurator from behind this portal. The dataset we have been provided with contains the following fields.
+With CLERUS in place, various option to link this data with other datasources arrise. By linking protestant ministers with external data like book titles bottom-up reconstruction of trends and changes in thematization can be delivered. Below a description of linking three external data sources is provided. 
 
-|Fieldname | Description|
-|----|---|
-|Badge| internal badge id|
-|Bioport_id| unique id in bioportal to link it to other datasources |
-|Person_id|unique id of individual|
-|prepositie| preposition, an official title like duke or dr.|
-|voornaam| first name|
-|intrapositie| infix |
-|pnv_infixTitle| infix title |
-|geslachtsnaam| surname |
-|postpositie| postposition |
-|person_sex| gender |
-|VIAF_id_1| Virtual International Authority File Id to link with other datasources |
-|VIAF_id_2| Virtual International Authority File Id to link with other datasources when a second is known |
-|Wikidata_id| Id to wikidata |
-|event_birth_when| Birth date |
-|event_birth_text| additional information about the birth, mostly date of baptism | 
-|event_birth_place| place of birth or baptism |
-|event_death_when| date of death |
-|event_death_text| additional information about the death, e.g. date of funeral |
-|event_death_place| place of death or burial | 
-|category-1| category for which the inidivual was known for |
-|category-2| second category for which the inidivual was known for |
-|category-3| additional category for which the inidivual was known for |
-|category-4| additional category for which the inidivual was known for |
-|religion| information about the relgion of an individual |
+## 2.1 Biography portal 
+In order to connect individuals from the [Dutch Biography Portal](http://www.biografischportaal.nl/en/) we have been provided with a dump of the data in the form of an excel sheet from the datacurator of this portal. A notbook with which CLERUS is linked with this excel sheet is provided [here](2_1_biography_portal_data.ipynb). The linkage has been done by combining the first letter, with the surname and year of birth. Other options like Levenshtein, as done for [1_6_Boekzaallijst](..\1_Data_Harmonization\1_6_Boekzaallijst.ipynb) would also be possible depending on the user's research purposes. Probably a curation would still be required to be entirely sure it is the same person. 
 
-*Table 1 - fields Dutch Biography portal*
+## 2.2 Linking Book titles
+To link book title data with the CLERUS, a series of scripts has been created that first extracts the data from the [Royal Library’s Linked Data SPARQL endpoint](http://data.bibliotheken.nl/sparql) and translates these to separate tables.  
+Two notebooks are provided. 
 
-To link individuals from the our dataset with this portal we looked at the first letter of the name, the infix, the surname and the year of birth.
+1. A selection of certain attributes from Short-Title Catalogue Netherlands ([STCN](http://data.bibliotheken.nl/doc/dataset/stcn). See [2_2_Export_KB_STCN](2_2_Export_KB_STCN.ipynb)
+2. A selection of attributes from the [Nederlandse Bibliografie Totaal (NBT)](http://data.bibliotheken.nl/doc/dataset/nbt) data. See [2_3_Export_KB_NBT](2_3_Export_KB_NBT.ipynb)
 
-From CLERUS these are the first letter from name followed by infix, surname and year_birth. From BP these are the first letter of voornaam, intrapositie, geslachtsnaam, event_birth_when. For event_birth_when the first 4 digital number has been isolated assuming that is the year of birth.
+The linkage with individuals is done based on the First letter, Surname and the year of Birth between the metadata of the Royal Library and CLERUS. This is done in [3_Data_Analysis](.\3_Data_Analysis\). 
 
-For field where these corresponded we have created a list containing the Bioport_id and clerus_id. In total this resulted in 1199 matches between the biography portal and the CLERUS created in [activity 1](../act1). 
+## 2.3 Enriching location information
+In order to allow for spatial analysis a script has been developed based on string matching of place names from [geonames.org](https://www.geonames.org/). See [2_4_geocoder](2_4_geocoder.ipynb). This script functions as an example on what is possible and which location related fields can be connected. 
 
-The script that executed this analysis can be found [here](../act1/biography_portal_data.ipynb) in the form of a Jupyter Notebook.
+Depending on the research question, linkages should be made with resources like the historical geometries published by IISG researcher Rombert Stapel: Stapel, Rombert, 2018, "Historical Atlas of the Low Countries (1350–1800)", https://hdl.handle.net/10622/PGFYTM, IISH Data Collection, V13. 
 
 
 
 
-
-
-....

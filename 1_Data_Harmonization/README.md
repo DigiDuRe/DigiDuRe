@@ -1,4 +1,4 @@
-# Harmonization of data for CLERUS 
+# 1.1 Harmonization of data for CLERUS 
 
 The archival corpus of documents about career paths of Dutch Protestant ministers is rich, yet scattered around in multiple archives. Since the 1980s, prof. dr. Fred van Lieburg has initiated multiple projects to systematically collect information about career paths of Dutch Protestant ministers ("predikanten"), focusing on students, persons that passed the exam that allows them to act as Protestant ministers ("proponenten"), and individuals that were actually assigned to a parish ("gemeente" - "predikanten"). 
 
@@ -10,9 +10,7 @@ It also contains information about roles abroad as well as other roles they had 
 
 The extended version of CLERUS, CLERUS+, is focused on all individuals that passed the so-called *proponenten* exam, which gave them the right to act as Protestant ministers. CLERUS+ also includes, for example, individuals that had the right to act as Protestant ministers, but that followed a different career path and ministers that had this function abroad. For CLERUS+, the data model of CLERUS is extended to allow adding information about the so-called proponenten exam (e.g., the location where individuals were registered and when and where their exam took place, etc.). Ideally, CLERUS would contain all individuals that did this *proponenten* exam or were registered as students, however since this data is not yet systematically collected we decided to have CLERUS focused on individuals that acted as Protestant ministers and leave CLERUS+ for the moment that the archival sources have been transcribed (manually or by applying for instance Handwritten Text Recognition (HTR) algorithms). Yet, we do provide a first version of the CLERUS+ data model and diagram based on the data that we have available.
 
-
-
-## Data sources for CLERUS
+## 1.1.1 Data sources for CLERUS
 
 ### Datasource 1 - Database Dutch Reformed Clergy (DRC) 1555-1816
 
@@ -24,9 +22,26 @@ The processing steps to transform the word document into a relational database a
 
 The second dataset of CLERUS is teh Dutch Ministers (DM) 1572-2004 (predikantenbestand ca1572-ca2004.accdb) database. This dataset contains information about the careers of Dutch ministers between 1572 and 2004. It overlaps with DRC, but continues after 1816. It has been created by analyzing the archives of parishes / *gemeentes*. It thus has not been focused on individual careers, but on the parishes/ *gemeentes*. Yet, if the registration is correct on its content and spelling, it is possible to derive career paths from this dataset. The processing steps for this harmonization are available [here](/1_2_DM_1572-2004.ipynb).
 
+## 1.1.2 Harmonzation process
+
+The process of harmonizing DRC and DM was done in a series of steps and involved a round of curation by history scholars. Because of the curation part of the processing notebooks had been one timers and are not easily reused, yet the steps that it contains are still valuable as a source of inspiration for the future processing of semi structured data into a relational database. Below an overview of the various harmonization steps are provided including highlights on reusable processing steps. Note that this processing has been a linear process.
+
+| Harmonization step | Data Source |Notebook | Highlights |
+|-----|-----|-----|----|
+|**STEP 1** - Parsing text file to database tables | DRC | [1_1_DRC_1555-1816.ipynb]() | <ul><li>attributes to certain collumns based on key strings</li><li>isolate information about individuals</li><li>seperate items from collumns through specific characters</li></ul> |
+|**STEP 2** - Curation of history scholars | DRC | Access Database created for curation | <ul><li>Since there were still too many issue with the data after step 1, every item in the database was manually checked by four history students. Remaining issues were checked with senior staff (~12.500 individuals). </li></ul> |
+|**STEP 3** - Extracting individuals from DM | DM | [1_2_DM_1572-2004.pynb]() | <ul><li>isolate individuals by creating small networks linking "from" and "to" roles</li></ul> |
+|**STEP 4** - Linking DRC and DM  | DRC and DM | [1_3_check_links_DRC_DM.ipynb]() | <ul><li>string matching on names and years</li><li>count the number of roles and matches to see where DRC and DM do not match.</li><li>provide a subselection of individuals that needed to be curated</li></ul> |
+|**STEP 5** - Checking DRC and DM  | DRC and DM | Access Database created for curation | <ul><li>check number of roles and nature of roles based on the outcome of step 4. (~1500 individuals) </li></ul> |
+|**STEP 6** - Update the end of the role | DRC (and DM)| [1_4_Update_end_role_after_DRC_DM_check.ipynb]() | <ul><li>based on the start of the new role or death the end of the role has been autmatically filled in </li><li>isolate information about individuals</li><li>seperate items from collumns through specific characters</li></ul> |
+|**STEP 7** - Integrating individuals from DM that are not present in DRC into CLERUS | DM | [1_5_Integrate_DM_only_individuals.ipynb]() | <ul><li>make a subselection of individuals from DM that are not in DRC</li><li>parse attributes to the right field of CLERUS datamodel.</li></ul> | 
 
 
-## Data sources for CLERUS+
+&nbsp;\
+&nbsp;\
+&nbsp;
+
+## 1.2 Data sources for CLERUS+
 
 ### Datasource 3 - Acta der particuliere synoden from 1620 ~ 1735
 
@@ -36,7 +51,7 @@ For the construction of the dataset, a start has been made allowing it to distin
 
 ### Datasource 4 - Boekzaallijst 1736 - 1816
 
-This data source is the result of analyzing so-called "Boekzaallijsten" and converting these into structured cards. These cards have been digitized in a structured table. It contains information about when students were registered, when they went for their proposition exam, and where they had their first assignment (if any). In some cases, it also contains information about their second assignment. The dataset has a temporal coverage from 1735-1816. The dataset contains xxx records and has been curated manually in order to identify individuals that are within CLERUS as well. In order to link the individuals from this data source, a joining method using [Levenshtein](https://maxbachmann.github.io/Levenshtein/levenshtein.html#distance) has been applied to facilitate the curation process. The description of this dataset and accompanying script are available [here](/1_4_Boekzaallijst.md). This data source is ready to be integrated into CLERUS, yet it had been decided to not yet include it, since it will generate a strong bias. Also, it would make much more sense to include this data once the Acta data has been transcribed.
+This data source is the result of analyzing so-called "Boekzaallijsten" and converting these into structured cards. These cards have been digitized in a structured table. It contains information about when students were registered, when they went for their proposition exam, and where they had their first assignment (if any). In some cases, it also contains information about their second assignment. The dataset has a temporal coverage from 1735-1816. The dataset contains xxx records and has been curated manually in order to identify individuals that are within CLERUS as well. In order to link the individuals from this data source, a joining method using [Levenshtein](https://maxbachmann.github.io/Levenshtein/levenshtein.html#distance) has been applied to facilitate the curation process. The description of this dataset and accompanying script are available [here](/1_6_Boekzaallijst.md). This data source is ready to be integrated into CLERUS, yet it had been decided to not yet include it, since it will generate a strong bias. Also, it would make much more sense to include this data once the Acta data has been transcribed.
 
 ### Datasource 5 - Keppel 1747
 

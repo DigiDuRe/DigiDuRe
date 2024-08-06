@@ -1,16 +1,5 @@
-# Data model CLERUS
+DROP TABLE IF EXISTS "01_clerus_bio";
 
-The CLERUS datamodel is developed by analysing DRC and DM systematically. The schematic overview of the datamodel that has been created can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_datamodel_schema.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_datamodel_schema.drawio). This database schema on the right shows the various fields that are generated from DRC and that are present in DM. In addition these tables show to which field its content is parsed in CLERUS. On the left the database schema shows the CLERUS database model of which the various tables and fields are described below.
-
-At the core of CLEURS the table **01_clerus_bio** is put with the basic biographical information about an individual. It for instnce contains the name, surname, year of birth, year of death etc. for every individual. The information from  **01_clerus_bio** is rather generic and is not bound ministers only. Making a distinction between generic data and more contextual data is a deliberate decision in the design of the datamodel, allowing it to be intergrated with other sources lateron.
-
-Given the manual curation that has taken place when integrating DRC and DM we decided to not keep track on based on which datasource decisions have been made. Yet we do know that every decision we made for every individual that is in DRC is double checked with DM and that individuals that are not in DRC come from DM. For DRC we kept the id and reused that id as clerus_id. For individuals that are not in DRC, but that are in DM we created a new clerus_id which are all above 9_000_000. Since DM is based on roles where every role is a different row in the table [see](1_2_DM_1572-2004.ipynb), we wanted to keep that origin and added ws we decided to add "role_source_id" to 12_clerus_role in order to store the relation to the original source. 
-
-## 01_clerus_bio
-
-A SQL code, including the data type and a short description of every column in every table, to create **01_clerus_bio** is provided below.
-
-```sql
 CREATE TABLE "01_clerus_bio" (
   "clerus_id" INTEGER,                              --Unique identifyer and primary key in the database
   "first_name" VARCHAR(255),                        --First name
@@ -42,24 +31,14 @@ CREATE TABLE "01_clerus_bio" (
   "remarks" VARCHAR(255),                           --remarks about the individual
   "remarks_source" VARCHAR(255),                    --information about from which dataset the data originates and  additional remarks about the source (e.g volume/ book)
 );
-```
-## 02_drc_org
 
-As a one-to-one relationship with **01_clerus_bio** the table **02_drc_org** is put in place. This table contains the original input form the [DRC text file](1_1_DRC_1555-1816.ipynb). The reason to not integrate this into **01_clerus_bio** is because the database design strategy is to make a distinction between generic and more contextual data. Furthermore, the final version of CLERUS will not contain this information for every individual, since it will also contain information from for instance [DM](1_2_DM_1572-2004.ipynb).
-
-```sql
 DROP TABLE IF EXISTS "02_drc_org";
 
 CREATE TABLE "02_drc_org" (
   "drc_id" INTEGER,                                 --Key that corresponds with the clerus_id in 01_clerus_bio. Since DRC is used as basis for CLERUS we decided to use the same value for CLERUS as used in DRC. Therefore the drc_id can be directly connected with the clerus_id.
   "original_input_drc" TEXT                         --The original input text string from DRC
 );
-```
 
-## 11_clerus_alt_name
-Since individuals can have multiple alternative names, the table **11_clerus_alt_name** is considered a one to many relationship with **01_clerus_bio**.
-
-```sql
 DROP TABLE IF EXISTS "11_clerus_alt_name";
 
 CREATE TABLE "11_clerus_alt_name" (
@@ -72,12 +51,7 @@ CREATE TABLE "11_clerus_alt_name" (
   "remarks_alt_name" TEXT,                          --remarks about the alternative name
   "alt_initials" VARCHAR(255)                       --alternative initials
 );
-```
 
-## 12_clerus_role
-The table **12_clerus_role** contains information about the various roles an individual could have had over time. Since an individual could have had multiple roles over time, **12_clerus_rols** has a one to many relationship with **01_clerus_bio**. The table also allows to add overlapping roles.
-
-```sql
 DROP TABLE IF EXISTS "12_clerus_role";
 
 CREATE TABLE "12_clerus_role" (
@@ -102,11 +76,7 @@ CREATE TABLE "12_clerus_role" (
   "role_remarks_source" VARCHAR(255),               --information about from which dataset the data originates and  additional remarks about the source (e.g volume/ book)
   "role_source_id" INTEGER                          --in order to relate the information about the role to the original dataset, a field to store this information is created (e.g. DM id)
 );
-```
-## 2x_xxx_alt_place
-Within the dataset there are multiple field that contain information about place names. To allow for multiple alternative spellings of placenames a series of tables are generated which are linked as one to many relationships with the various tables presented above.
 
-```sql
 DROP TABLE IF EXISTS "21_birth_alt_place";
 DROP TABLE IF EXISTS "22_baptism_alt_place";
 DROP TABLE IF EXISTS "23_death_alt_place";
@@ -143,22 +113,7 @@ CREATE TABLE "26_residence_alt_place" (
   "role_place_residence_id" INTEGER DEFAULT 0,    --foreign key for residence place
   "alt_place_name" VARCHAR(255)                   --alternative spelling for place name
 );
-```
 
-
-The various SQL create tables can also be accessed as a .sql file here: [create_clerus.sql](create_clerus.sql)
-
-
-# Data model CLERUS+
-
-As stated above CLERUS+ would be based on all individuals that did an exam that gave the the rigth to act as protestant minister. Therefore, it adds a new table where this information can be parsed to. The database diagram for CLERUS+ can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_datamodel_schema_extended.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_datamodel_schema_extended.drawio). On the right it contains additional datasources from where this data can be derived from, on the left it contains the CLERUS+ database model / diagram.
-
-## 03_clerus_exam
-For CLERUS+ a additionl table is included to add information about the preperation exam, proponenten exam and where and under which administrative body these took place. 
-
-The table **03_clerus_exam** contains information about the exam of an individual and is considered to have a one-to-one (one row for every inidividual where information about the exam date is known) relationship with **01_clerus_bio**, since the exam for getting the "proponent"-status, which allows to act as minister needs to be done only once. In the version 1 of CLERUS this table remained empty
-
-```sql
 DROP TABLE IF EXISTS "03_clerus_exam";
 
 CREATE TABLE "03_clerus_exam" (
@@ -175,7 +130,3 @@ CREATE TABLE "03_clerus_exam" (
   "remarks_source" VARCHAR(255),                    --information about from which dataset the data originates
   "source_id" INTEGER,                              --in order to relate the information about the role to the original dataset, a field to store this information is created (e.g. keppel or boekzaallijst)
 );
-```
-
-
-The various SQL create tables for CLERUS+ can also be accessed as a .sql file here: [create_clerus_plus.sql](create_clerus_plus.sql)
