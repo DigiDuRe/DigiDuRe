@@ -151,7 +151,7 @@ The various SQL create tables can also be accessed as a .sql file here: [create_
 
 # Data model CLERUS+
 
-As stated above CLERUS+ would be based on all individuals that did an exam that gave the the rigth to act as protestant minister. Therefore, it adds a new table where this information can be parsed to. The database diagram for CLERUS+ can be accessed [here](), On the right it contains additional datasources from where this data can be derived from. On the left it contains the CLERUS+ database model / diagram.
+As stated above CLERUS+ would be based on all individuals that did an exam that gave the the rigth to act as protestant minister. Therefore, it adds a new table where this information can be parsed to. The database diagram for CLERUS+ can be accessed [here](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=CLERUS_datamodel_schema_extended.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FMorrizzzzz%2FDigiDuRe%2Fmain%2F1_Data_Harmonization%2FCLERUS_datamodel_schema_extended.drawio). On the right it contains additional datasources from where this data can be derived from, on the left it contains the CLERUS+ database model / diagram.
 
 ## 03_clerus_exam
 For CLERUS+ a additionl table is included to add information about the preperation exam, proponenten exam and where and under which administrative body these took place. 
