@@ -21,7 +21,7 @@ Besides linking book title data, a script that connects CLERUS with the Dutch Bi
 
 ## 3. Data Analysis
 
-With the CLERUS dataset available, a series of analysis scripts have been developed to explore the data and add to the analysis of book titles, allowing for a bottom-up reconstruction of trends and changes in thematization. These analysis scripts can be found under [3_Data_Analysis](/3_Data_Analysis/).
+With the CLERUS dataset available, a series of analysis scripts have been developed to explore the data and add to the analysis of book titles, allowing for a bottom-up reconstruction of trends and changes in thematization. These analysis scripts can be found under [3_Data_Analysis](/3_Data_Analysis/). The scripts are presented are dynamic and presented for CLERUS v1, but can easily be rerun once CLERUS_v2 and CLERUS+ are processed and curated see[1_Data_Harmonization](/1_Data_Harmonization/).
 
 ## 4. Dissemination
 
