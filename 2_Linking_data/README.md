@@ -12,13 +12,14 @@ Two notebooks are provided.
 1. A selection of certain attributes from Short-Title Catalogue Netherlands ([STCN](http://data.bibliotheken.nl/doc/dataset/stcn). See [2_2_Export_KB_data_stcn](2_2_Export_KB_data_stcn.ipynb)
 2. A selection of attributes from the [Nederlandse Bibliografie Totaal (NBT)](http://data.bibliotheken.nl/doc/dataset/nbt) (which also includes entries from STCN) data. See [2_3_Export_KB_data_nbt](2_3_Export_KB_data_nbt.ipynb)
 3. A selection of attributes from the [Nederlandse Bibliografie Totaal (NBT)](http://data.bibliotheken.nl/doc/dataset/nbt) (which also includes entries from STCN) data, where the type of publication is added as well. See [2_4_Export_KB_data_nbt_rdf_types](2_4_Export_KB_data_nbt_rdf_types.ipynb)
+4. A selection of attributes from NBT including author information. This export is used in [3_3_clerus_kb](../3_Data_Analysis/3_3_clerus_kb.ipynb). See [2_5_Export_KB_data_nbt_authorinfo](2_5_Export_KB_data_nbt_authorinfo.ipynb)
 
-The linkage with individuals is done based on the First letter, Surname and the year of Birth between the metadata of the Royal Library and CLERUS. This is done in [3_Data_Analysis](.\3_Data_Analysis\). 
+The linkage with individuals is done based on the First letter, Surname and the year of Birth between the metadata of the Royal Library and CLERUS. This is done in [3_Data_Analysis](../3_Data_Analysis/README.md). 
 
 ## 2.3 Enriching location information
-In order to allow for spatial analysis a script has been developed based on string matching of place names from [geonames.org](https://www.geonames.org/). See [2_5_geocoder](2_5_geocoder.ipynb). This script functions as an example on what is possible and which location related fields can be connected. 
+In order to allow for spatial analysis a script has been developed based on string matching of place names from [geonames.org](https://www.geonames.org/). See [2_6_geocoder](2_6_geocoder.ipynb). This script functions as an example on what is possible and which location related fields can be connected. 
 
-Depending on the research question, linkages should be made with resources like the historical geometries published by IISG researcher Rombert Stapel: Stapel, Rombert, 2018, "Historical Atlas of the Low Countries (1350–1800)", https://hdl.handle.net/10622/PGFYTM, IISH Data Collection, V13. 
+Depending on the research question, linkages should be made with resources like the historical geometries published by IISG researcher Rombert Stapel: Stapel, Rombert, 2018, "Historical Atlas of the Low Countries (1350–1800)", [https://hdl.handle.net/10622/PGFYTM](https://hdl.handle.net/10622/PGFYTM), IISH Data Collection, V13. 
 
 
 

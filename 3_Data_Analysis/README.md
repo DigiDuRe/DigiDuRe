@@ -1,7 +1,7 @@
 # 3 Analysis scripts
-With the [CLERUS dataset](../1_Data_Harmonization/) available and the other external [datasets](../2_Linking_data/) scraped, a series of analysis scripts have been developed to explore the data and add to the analysis of book titles. The scripts presented here are example scripts and would form the basis of computational historical research which would allow for a bottom-up reconstruction of trends and changes in thematization.
+With the [CLERUS dataset](../1_Data_Harmonization/README.md) available and the other external [datasets](../2_Linking_data/README.md) scraped, a series of analysis scripts have been developed to explore the data and add to the analysis of book titles. The scripts presented here are example scripts and would form the basis of computational historical research which would allow for a bottom-up reconstruction of trends and changes in thematization.
 
-The scripts are presented are dynamic and presented for CLERUS v1, but can easily be rerun once CLERUS_v2 and CLERUS+ are processed and curated see[1_Data_Harmonization](../1_Data_Harmonization/).
+The scripts are presented are dynamic and presented for CLERUS v1, but can easily be rerun once CLERUS_v2 and CLERUS+ are processed and curated see[1_Data_Harmonization](../1_Data_Harmonization/README.md).
 
 
 ## 3.1 Basic Statistics on CLERUS. 
