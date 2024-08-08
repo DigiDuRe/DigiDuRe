@@ -9,13 +9,9 @@ In order to explore the dataset of CLERUS a series of basic statics are are perf
 It shows:
 - How to load the data
 - How to count the number of roles
-- How to plot the birth years of every minister
-- How to plot the year of death for every minister
+- Number of ministers per period
+- Average age
+- Average age per period
 
-
-## 3.2 Number of active ministers per period
-A more complex notebook is provided [here](3_2_active_ministers.ipynb) where the number of active ministers per period is generated.  
-
-
-## 3.3 Number of titles published by protestant ministers per year
-When linking book titles with CLERUS a series of analysis can be performed. In [this notebook](3_3_clerus_kb.ipynb) a series of explorative analyses are explored.
+## 3.2 Number of titles published by protestant ministers per year
+When linking book titles with CLERUS a series of analysis can be performed. In [this notebook](3_2_clerus_kb.ipynb) a series of explorative analyses are explored.
