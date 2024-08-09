@@ -26,3 +26,16 @@ With the CLERUS dataset available, a series of analysis scripts have been develo
 ## 4. Dissemination
 
 During the project, it has been presented on many occasions. Under [4_Dissemination](/4_Dissemination/), slide decks can be found, as well as installation instructions for the software used.
+
+## 5. Collaborators
+
+- Doreen van den Boogaart (VU researcher) - Shaping data model, curating multiple datasources and transcribing archival resources
+- Robin Korink (VU Student Assistant) - Curation DRC
+- Renée Brouwer (VU Student Assistant) - Curation DRC and DM
+- Cécile Bras (VU Student Assistant) - Curation DRC
+
+- [Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg) (professor at VU – director of HDC Centre for Religious History) - Project Leader 
+- [Mart van Lieburg](https://www.tmgn.nl/) (emeritus professor – director Trefpunt Medische Geschiedenis in Nederland) - External advisor
+
+- [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, perfoming analyses, creating and authoring this repository. 
+
