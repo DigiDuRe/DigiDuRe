@@ -39,3 +39,5 @@ During the project, it has been presented on many occasions. Under [4_Disseminat
 
 - [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, perfoming analyses, creating and authoring this repository. 
 
+## 6. Use of generative AI
+Parts of the code in this repository has been generated with the help of ChatGPT 3.5, in this process we never put in actual names of individuals, but we used dummy data instead. All AI-output has been verified for orrectness, accuracy and completeness, adapted where needed, and approved by the author.
