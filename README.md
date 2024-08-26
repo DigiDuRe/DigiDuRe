@@ -33,11 +33,12 @@ During the project, it has been presented on many occasions. Under [4_Disseminat
 - Robin Korink (VU Student Assistant) - Curation DRC
 - Renée Brouwer (VU Student Assistant) - Curation DRC and DM
 - Cécile Bras (VU Student Assistant) - Curation DRC
+- Britt (VU Student Assistant) - Boekzaallijst
 
-- [Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg) (professor at VU – director of HDC Centre for Religious History) - Project Leader 
+- [Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg) (professor at VU – director of HDC Centre for Religious History) - Project Leader
 - [Mart van Lieburg](https://www.tmgn.nl/) (emeritus professor – director Trefpunt Medische Geschiedenis in Nederland) - External advisor
 
-- [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, perfoming analyses, creating and authoring this repository. 
+- [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, perfoming analyses, creating and authoring this repository.
 
 ## 6. Use of generative AI
-Parts of the code in this repository has been generated with the help of ChatGPT 3.5, in this process we never put in actual names of individuals, but we used dummy data instead. All AI-output has been verified for orrectness, accuracy and completeness, adapted where needed, and approved by the author.
+Parts of the code in this repository has been generated with the help of ChatGPT 3.5, in this process we never put in actual names of individuals, but we used dummy data instead. All AI-output has been verified for correctness, accuracy and completeness, adapted where needed, and approved by the author.
