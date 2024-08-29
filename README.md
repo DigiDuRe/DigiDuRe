@@ -33,7 +33,7 @@ During the project, it has been presented on many occasions. Under [4_Disseminat
 - Robin Korink (VU Student Assistant) - Curation DRC
 - Renée Brouwer (VU Student Assistant) - Curation DRC and DM
 - Cécile Bras (VU Student Assistant) - Curation DRC
-- Britt (VU Student Assistant) - Boekzaallijst
+- Britt *achternaam ontbreekt* (VU Student Assistant) - Boekzaallijst
 
 - [Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg) (professor at VU – director of HDC Centre for Religious History) - Project Leader
 - [Mart van Lieburg](https://www.tmgn.nl/) (emeritus professor – director Trefpunt Medische Geschiedenis in Nederland) - External advisor
