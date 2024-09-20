@@ -9,7 +9,7 @@ The project aims to map long-term developments in Dutch public discourse, especi
 
 ## 1. Data Harmonization - Protestant individuals
 
-A structured dataset with careers of Dutch Protestant ministers from 1555 until 2004 is created out of a series of semi-structured data sources that are the result of archival historical research. This process is considered data harmonization and entails the modeling of the data structure and a series of processing steps. The processing steps are available as Jupyter notebooks and are grouped under [1_Data_Harmonization](/1_Data_Harmonization/). On top of the data harmonization, a curation process took place as well, especially since multiple data sources with information from the same individual have been integrated and contained differences in spelling. This process has resulted in a new dataset named **CLERUS - Database Dutch Reformed Clergy**, where the emphasis lies on ministers that have served in Dutch churches. The database and data model could be extended with data from ministers that were active in other countries (i.e., in the West and East Indies), as well as information about individuals that obtained the right to act as Protestant ministers (proponenten) but followed a different career path (e.g., school teacher, professor, medical doctor, etc.).
+A structured dataset with careers of Dutch Protestant ministers from 1555 until 2004 is created out of a series of semi-structured data sources that are the result of archival historical research. This process is considered data harmonization and entails the modeling of the data structure and a series of processing steps. The processing steps are available as Jupyter notebooks and are grouped under [1_Data_Harmonization](/1_Data_Harmonization/). On top of the data harmonization, a curation process took place as well, especially since multiple data sources with information from the same individual have been integrated and contained differences in spelling. This process has resulted in a new dataset named **CLERUS - Database Dutch Reformed Clergy**, where the emphasis lies on ministers that have served in Dutch churches. The database and data model can be extended with data from ministers that were active in other countries (i.e., in the West and East Indies), as well as information about individuals that obtained the right to act as Protestant ministers (proponenten) but followed a different career path (e.g., school teacher, professor, medical doctor, etc.).
 
 ## 2. Linking and Enriching Data
 
@@ -21,11 +21,11 @@ Besides linking book title data, a script that connects CLERUS with the Dutch Bi
 
 ## 3. Data Analysis
 
-With the CLERUS dataset available, a series of analysis scripts have been developed to explore the data and add to the analysis of book titles, allowing for a bottom-up reconstruction of trends and changes in thematization. These analysis scripts can be found under [3_Data_Analysis](/3_Data_Analysis/). The scripts are presented are dynamic and presented for CLERUS v1, but can easily be rerun once CLERUS_v2 and CLERUS+ are processed and curated see[1_Data_Harmonization](/1_Data_Harmonization/).
+With the CLERUS dataset available, a series of analysis scripts have been developed to explore the data and added to the analysis of book titles, allowing a bottom-up reconstruction of trends and changes in thematization. These analysis scripts can be found under [3_Data_Analysis](/3_Data_Analysis/). The scripts are dynamic and presented for CLERUS v1, but can easily be rerun once CLERUS_v2 and CLERUS+ are processed and curated see[1_Data_Harmonization](/1_Data_Harmonization/).
 
 ## 4. Dissemination
 
-During the project, it has been presented on many occasions. Under [4_Dissemination](/4_Dissemination/), slide decks can be found, as well as installation instructions for the software used.
+During the project, CLERUS has been presented on many occasions. Under [4_Dissemination](/4_Dissemination/), slide decks can be found, as well as installation instructions for the software used.
 
 ## 5. Collaborators
 
@@ -33,12 +33,12 @@ During the project, it has been presented on many occasions. Under [4_Disseminat
 - Robin Korink (VU Student Assistant) - Curation DRC
 - Renée Brouwer (VU Student Assistant) - Curation DRC and DM
 - Cécile Bras (VU Student Assistant) - Curation DRC
-- Britt *achternaam ontbreekt* (VU Student Assistant) - Boekzaallijst
+- Britt van der Beek (VU Student Assistant) - Boekzaallijst
 
 - [Fred van Lieburg](https://research.vu.nl/en/persons/fred-van-lieburg) (professor at VU – director of HDC Centre for Religious History) - Project Leader
 - [Mart van Lieburg](https://www.tmgn.nl/) (emeritus professor – director Trefpunt Medische Geschiedenis in Nederland) - External advisor
 
-- [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, perfoming analyses, creating and authoring this repository.
+- [Maurice de Kleijn](https://www.esciencecenter.nl/team/maurice-de-kleijn/) (senior Research Software Engineer – Netherlands eScience Center) - Developing datamodel, harmonizing dataset, performing analyses, creating and authoring this repository.
 
 ## 6. Use of generative AI
-Parts of the code in this repository has been generated with the help of ChatGPT 3.5, in this process we never put in actual names of individuals, but we used dummy data instead. All AI-output has been verified for correctness, accuracy and completeness, adapted where needed, and approved by the author.
+Parts of the code in this repository has been generated with the help of ChatGPT 3.5. In this process we never used in actual names of individuals, but we used dummy data instead. All AI-output has been verified for correctness, accuracy and completeness, adapted where needed, and approved by the author/lead research software engineer.
